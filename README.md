@@ -58,14 +58,8 @@ streamlit run app.py
 - **Explainable** — result explained in same language as the question
 - **Extensible** — add more solvers (GLPK, Gurobi) or problem types (multi-objective, stochastic)
 
-## 💼 Interview Talking Points
-1. How do you prevent LLM hallucination in the model spec? *(strict JSON schema + validation + fallback error handling)*
-2. What problem types can this handle? *(LP, ILP, MIP, assignment, transportation, knapsack — anything expressible in PuLP)*
-3. How would you productionise this? *(FastAPI endpoint, rate limiting, model spec caching, Gurobi for large instances)*
-
 ## 📁 Files
 ```
-05_llm_or_solver/
 ├── llm_or_solver.py   # Core pipeline + CLI
 ├── app.py             # Streamlit chat UI
 ├── requirements.txt
