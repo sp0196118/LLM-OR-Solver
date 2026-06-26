@@ -53,7 +53,7 @@ if user_input:
     with st.chat_message("assistant"):
         with st.spinner("Parsing problem with LLM..."):
             try:
-                spec = call_llm(user_input)
+                spec = call_llm(user_input, api_key)
             except Exception as e:
                 st.error(f"LLM parsing failed: {e}")
                 st.stop()
