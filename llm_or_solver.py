@@ -51,11 +51,11 @@ Rules:
 - If problem is infeasible as described, still structure it and note in summary
 """
 
-def call_llm(user_problem: str) -> dict:
+def call_llm(user_problem: str, api_key: str) -> dict:
     """Send problem to LLM, get structured OR spec back."""
     if not LLM_AVAILABLE:
         return _demo_spec()
-    client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY", ""))
+    client = anthropic.Anthropic(api_key=api_key)
     message = client.messages.create(
         model="claude-sonnet-4-6",
         max_tokens=1500,
