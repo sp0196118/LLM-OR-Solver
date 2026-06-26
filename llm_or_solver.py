@@ -56,8 +56,7 @@ def call_llm(user_problem: str) -> dict:
     if not LLM_AVAILABLE:
         return _demo_spec()
 
-    client = anthropic.Anthropic()
-    message = client.messages.create(
+    message = _CLIENT.messages.create(
         model="claude-sonnet-4-6",
         max_tokens=1500,
         system=SYSTEM_PROMPT,
