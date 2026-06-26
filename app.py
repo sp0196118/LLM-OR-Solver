@@ -18,6 +18,7 @@ with st.sidebar:
     api_key = st.text_input("Anthropic API Key", type="password",
                             value=os.environ.get("ANTHROPIC_API_KEY",""),
                             help="Get yours at console.anthropic.com")
+    print(api_key)
     if api_key:
         os.environ["ANTHROPIC_API_KEY"] = api_key
     st.markdown("---")
