@@ -48,7 +48,7 @@ if user_input:
     st.session_state.messages.append({"role": "user", "content": user_input})
     with st.chat_message("user"):
         st.markdown(user_input)
-        st.markdown(api_key)
+        # st.markdown(api_key)
 
     with st.chat_message("assistant"):
         with st.spinner("Parsing problem with LLM..."):
